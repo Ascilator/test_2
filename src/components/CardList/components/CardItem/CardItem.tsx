@@ -1,4 +1,4 @@
-import { Card } from "../../../hooks/useCards";
+import { Card } from "../../../../hooks/useCards";
 
 export const CardItem: React.FC<{ card: Card }> = ({ card }) => {
   return (

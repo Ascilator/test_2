@@ -56,10 +56,6 @@ export const useCards = (): CardsContextProps => {
     const newFilteredCards = cards.filter(
       (card) => card.tags.indexOf(filter) !== -1
     );
-
-    if (JSON.stringify(newFilteredCards) === JSON.stringify(filteredCards))
-      return;
-
     setFilteredCards(newFilteredCards);
   };
 

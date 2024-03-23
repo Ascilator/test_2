@@ -1,11 +1,9 @@
 import { useContext } from "react";
-import { CardItem } from "./CardItem/CardItem";
 import { CardsContext } from "../../context/cardsContext";
+import { CardItem } from "./components/CardItem";
 
 export const CardList: React.FC = () => {
   const { filteredCards } = useContext(CardsContext);
-
-  console.log(124);
 
   return (
     <div className="flex-auto flex flex-wrap gap-base gap-y-base">

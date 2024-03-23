@@ -8,18 +8,18 @@ export const Menu: React.FC = () => {
 
   const activeTag = useRef<string>("");
 
-  console.log(12341324);
-
   const handleTagClick = (el: string) => {
+    if (activeTag.current === el) return;
+
     activeTag.current = el;
     filterCards(el);
   };
 
   return (
-    <ul className="flex-initial flex-shrink-0 w-64 text-base font-bold border border-gray p-3 rounded">
+    <ul className="flex-initial flex-shrink-0 w-64 text-base font-bold border border-gray p-3 rounded sticky top-5">
       <li
-        className={cx("p-3 cursor-pointer rounded-small", {
-          "bg-primary text-white ": !activeTag.current,
+        className={cx("p-3 cursor-pointer rounded-small select-none", {
+          "bg-primary text-white": !activeTag.current,
         })}
         onClick={() => handleTagClick("")}
       >
@@ -27,9 +27,12 @@ export const Menu: React.FC = () => {
       </li>
       {tags.map((el) => (
         <li
-          className={cx("p-3 cursor-pointer duration-300 rounded-small", {
-            "bg-primary text-white ": el === activeTag.current,
-          })}
+          className={cx(
+            "p-3 cursor-pointer duration-300 rounded-small select-none",
+            {
+              "bg-primary text-white ": el === activeTag.current,
+            }
+          )}
           key={el}
           onClick={() => handleTagClick(el)}
         >

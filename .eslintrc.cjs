@@ -10,6 +10,6 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["react"],
   rules: {
-    "arrow-parens": ["error", "as-needed"],
+    "arrow-parens": ["error", "always"],
   },
 };
